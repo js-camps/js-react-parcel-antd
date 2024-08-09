@@ -1,5 +1,7 @@
 import "../styles/App.less";
 
+import { Button as AntButton } from 'antd';
+
 export function App() {
     return (
         <div className="landing-main-text">
@@ -8,6 +10,9 @@ export function App() {
                 <p>
                 This is an example of how we&apos;d like for you to use <span>antd</span>.
                 </p>
+
+                <AntButton type="primary">Primary Button</AntButton>
+
             </div>
         </div>
     );

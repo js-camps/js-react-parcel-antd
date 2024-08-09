@@ -1,3 +1,104 @@
+# js-parcel-react-antd
+
+Project structure
+
+```
+/js-parcel-react-antd
+├── src 
+│  ├── App.js 
+│  ├── index.html 
+│  └── index.js
+├── styles 
+│  ├── App.less 
+│  └── theme-overrides.less
+├── .gitignore 
+├── package-lock.json 
+├── package.json 
+└── Readme.md
+```
+
+`src/App.js`
+```js
+import "../styles/App.less";
+
+import { Button as AntButton } from 'antd';
+
+export function App() {
+    return (
+        <div className="landing-main-text">
+            <h1>Welcome to Labs Basic SPA</h1>
+            <div className="landing-main-text">
+                <p>
+                This is an example of how we&apos;d like for you to use <span>antd</span>.
+                </p>
+
+                <AntButton type="primary">Primary Button</AntButton>
+
+            </div>
+        </div>
+    );
+  }
+```
+
+`src/index.html`
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Parcel App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
+```
+
+`src/index.js`
+```js
+import { createRoot } from "react-dom/client";
+import { App } from "./App";
+
+const container = document.getElementById("app");
+const root = createRoot(container)
+root.render(<App />);
+```
+
+`styles/App.less`
+```less
+@import "./theme-overrides";
+
+h1 {
+    //color: red;
+    color: @primary-color;
+}
+
+h2 {
+    color: red;
+}
+
+.landing-main-title {
+    font-family: @text__font-family, @text__font-family--header;
+  }
+  
+.landing-main-text {
+  margin: 5% 0;
+  text-align: center;
+  font-family: @text__font-family--header;
+  font-size: 1.25rem;
+}
+  
+  /* Example usage of primary color */
+  span {
+    color: @primary-color;
+    font-size: 2.25rem;
+  }
+```
+
+`styles/theme-overrides.less`
+```less
 // General
 @primary-color: #ff1856;
 @link-color: #1890ff;
@@ -104,3 +205,24 @@
 @text__line-height--h5: 1.5rem;
 @text__line-height--body: 1.375rem;
 @text__line-height--footer: 1;
+```
+
+```package.json```
+```json
+{
+"scripts": {
+  "start": "parcel src/index.html",
+  "build": "parcel build src/index.html"
+  },
+  "devDependencies": {
+    "@parcel/transformer-less": "^2.12.0",
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "antd": "^5.20.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
+```

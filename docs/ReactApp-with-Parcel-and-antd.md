@@ -37,7 +37,7 @@ npx parcel src/index.html
 
 ###  B. Start parcel to render react
 
-prepare the intila file: `src/index.html`, `src/index.js`, src/App.js:
+prepare the initial file: `src/index.html`, `src/index.js`, src/App.js:
 
 -   `src/index.html`
 
@@ -131,7 +131,7 @@ yarn-error.log*
 
 ## Styling with antd
 
-### 
+-   install `less` and `antd`
 
 - In order to provide an experience for you to dive right into a code base and have everything you need to successfully style and craft your UI Components we'd like for you to gain some practice using the [`ANT Design Library`](https://ant.design/).
 
